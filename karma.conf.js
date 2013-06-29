@@ -10,29 +10,30 @@ module.exports = function(karma) {
     key: 'SAUCELABS_APIKEY'
   }
 
-  karma.defineLauncher('IE7', 'WebDriver', {
-    config: webdriverConfig,
-    spec: {
-      browserName: 'internet explorer',
-      platform: 'Windows XP',
-      version: '7',
-      tags: ['IE7', 'Windows XP'],
-      name: 'IE7:Windows XP'
-    }
-  });
+  karma.set({
 
-  karma.defineLauncher('Safari5', 'WebDriver', {
-    config: webdriverConfig,
-    spec: {
-      browserName: 'safari',
-      platform: 'OS X 10.6',
-      version: '5',
-      tags: ['Safari5', 'OS X 10.6'],
-      name: 'Safari5:OS X 10.6'
-    }
-  });
-
-  karma.configure({
+    customLaunchers: {
+      'IE7': {
+        base: 'WebDriver',
+		  config: webdriverConfig,
+		  spec: {
+			browserName: 'internet explorer',
+			platform: 'Windows XP',
+			version: '7',
+			name: 'Karma'
+		  }
+	  },
+	  'Safari5': {
+        base: 'WebDriver',
+		  config: webdriverConfig,
+		  spec: {
+			browserName: 'safari',
+			platform: 'OS X 10.6',
+			version: '5',
+			name: 'Karma'
+		  }
+      }
+    },
 
     // base path, that will be used to resolve files and exclude
     basePath: '',
