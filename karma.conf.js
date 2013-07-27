@@ -5,9 +5,7 @@ module.exports = function(karma) {
 
   var webdriverConfig = {
     url: 'ondemand.saucelabs.com',
-    port: 80,
-    user: 'SAUCELABS_USERNAME',
-    key: 'SAUCELABS_APIKEY'
+    port: 80
   }
 
   karma.set({
@@ -15,23 +13,17 @@ module.exports = function(karma) {
     customLaunchers: {
       'IE7': {
         base: 'WebDriver',
-		  config: webdriverConfig,
-		  spec: {
-			browserName: 'internet explorer',
-			platform: 'Windows XP',
-			version: '7',
-			name: 'Karma'
-		  }
+        browserName: 'internet explorer',
+		platform: 'Windows XP',
+		version: '7',
+		name: 'Karma'
 	  },
 	  'Safari5': {
         base: 'WebDriver',
-		  config: webdriverConfig,
-		  spec: {
-			browserName: 'safari',
-			platform: 'OS X 10.6',
-			version: '5',
-			name: 'Karma'
-		  }
+		browserName: 'safari',
+		platform: 'OS X 10.6',
+		version: '5',
+		name: 'Karma'
       }
     },
 
