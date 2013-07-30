@@ -3,28 +3,19 @@
 
 module.exports = function(karma) {
 
-  var webdriverConfig = {
-    url: 'ondemand.saucelabs.com',
-    port: 80
-  }
+  var config = {
+    hostname: '127.0.0.1',
+    port: 4444
+  };
 
   karma.set({
 
     customLaunchers: {
-      'IE7': {
+      'Firefox': {
         base: 'WebDriver',
-        browserName: 'internet explorer',
-		platform: 'Windows XP',
-		version: '7',
+        browserName: 'firefox',
 		name: 'Karma'
-	  },
-	  'Safari5': {
-        base: 'WebDriver',
-		browserName: 'safari',
-		platform: 'OS X 10.6',
-		version: '5',
-		name: 'Karma'
-      }
+	  }	  
     },
 
     // base path, that will be used to resolve files and exclude
@@ -50,7 +41,7 @@ module.exports = function(karma) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+    reporters: ['progress', 'junit'],
 
 
     // web server port
@@ -82,7 +73,7 @@ module.exports = function(karma) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['IE7', 'Safari5'],
+    browsers: ['Firefox'],
 
 
     // If browser does not capture in given timeout [ms], kill it
