@@ -2,6 +2,6 @@
   "devDependencies": {
     "karma": ">=0.10",
     "karma-webdriver-launcher": ">=0.1.1",
-    "karma-junit-reporter": ">=0.0.1"
+    "karma-junit-reporter": ">=0.1.0"
   }
 }
